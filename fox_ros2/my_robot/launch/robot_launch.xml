@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find-pkg-share foxglove_bridge)/launch/foxglove_bridge_launch.xml">
+  <arg name="port" value="9090"/>
+  </include>
+  <node pkg="my_robot" exec="walker" name="mimic">
+    <remap from="/output/cmd_vel" to="/cmd_vel"/>
+  </node>
+</launch>
